@@ -1,4 +1,3 @@
-
 function ColorMyPencils(color)
 	color = color or "rose-pine-moon"
 	vim.cmd.colorscheme(color)
@@ -9,10 +8,7 @@ function ColorMyPencils(color)
 end
 
 return {
-	{
-		"erikbackman/brightburn.vim",
-	},
-	{
+    {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		opts = {},
@@ -71,7 +67,6 @@ return {
 			})
 		end
 	},
-
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",

@@ -1,5 +1,5 @@
 return {
-    { 
+    {
         "tpope/vim-fugitive",
         config = function()
             vim.keymap.set("n", "<leader>gs", vim.cmd.Git);
@@ -26,7 +26,6 @@ return {
                         vim.cmd.Git({ "pull", "--rebase" })
                     end, opts)
 
-                    
                 end
             })
 
