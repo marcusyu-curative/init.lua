@@ -1,4 +1,6 @@
 # obsidian33's init.lua
 
-Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
+Prerequisite: 
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [deno](https://deno.com)
 
