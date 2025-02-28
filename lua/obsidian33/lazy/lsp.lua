@@ -34,6 +34,7 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "gopls",
+                    "terraformls",
                 },
                 handlers = {
                     function(server_name) -- default handler (optional)
@@ -50,7 +51,14 @@ return {
                                 Lua = {
                                     runtime = { version = "5.1" },
                                     diagnostics = {
-                                        globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+                                        globals = {
+                                            "bit",
+                                            "vim",
+                                            "it",
+                                            "describe",
+                                            "before_each",
+                                            "after_each",
+                                        },
                                     },
                                 }
                             }
@@ -59,7 +67,13 @@ return {
                     ["gopls"] = function()
                         local lspconfig = require("lspconfig")
                         lspconfig.gopls.setup({
-                            cmd = { os.getenv("HOME") .. "/go/bin/gopls" },
+                            cmd = { os.getenv("HOME") .. "/go/bin/gopls" }
+                        })
+                    end,
+                    ["terraformls"] = function()
+                        local lspconfig = require("lspconfig")
+                        lspconfig.terraformls.setup({
+                            filetypes = { "hcl", "terraform", "tf", "tfvars" }
                 })
                     end,
                 }

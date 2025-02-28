@@ -42,6 +42,13 @@ autocmd("LspAttach", {
     end,
 })
 
+autocmd("BufWritePre", {
+    pattern = { "*.tf", "*.hcl", "*.tfvars" },
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
+})
+
 vim.g.netrw_brows_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
