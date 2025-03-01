@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "rose-pine-moon"
+	color = color or "catppuccin"
 	vim.cmd.colorscheme(color)
 
 	-- for transparent backgrounds
@@ -10,7 +10,6 @@ end
 return {
     {
 		"folke/tokyonight.nvim",
-		lazy = false,
 		opts = {},
 		config = function()
 			ColorMyPencils()
@@ -67,6 +66,19 @@ return {
 			})
 		end
 	},
+    {
+		"catppuccin/nvim",
+		name = "catppuccin",
+        priority = 1000,
+		config = function()
+			require('catppuccin').setup({
+                flavour = "mocha",
+                no_italic = true,
+			})
+
+			ColorMyPencils();
+		end
+	},
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -81,6 +93,5 @@ return {
 			ColorMyPencils();
 		end
 	},
-
 }
 
