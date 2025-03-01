@@ -19,18 +19,18 @@ return {
                     local opts = { buffer = bufnr, remap = false }
                     vim.keymap.set("n", "<leader>p", function()
                         vim.cmd.Git("push")
-                    end, opts)
+                    end, opts, { desc = "Git: Push" })
 
                     -- rebase always
                     vim.keymap.set("n", "<leader>P", function()
                         vim.cmd.Git({ "pull", "--rebase" })
-                    end, opts)
+                    end, opts, { desc = "Git: Pull --rebase" })
 
                 end
             })
 
-            vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
-            vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
+            vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>", { desc = "Git: Diff get //2" })
+            vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>", { desc = "Git: Diff get //3" })
         end,
     }
 }

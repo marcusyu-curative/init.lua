@@ -12,5 +12,9 @@ return {
             { "<C-w>l", "<cmd>TmuxNavigateRight<cr>", mode = "n", silent = true },
             { "<C-w><C-l>", "<cmd>TmuxNavigateRight<cr>", mode = "n", silent = true },
         },
+        init = function()
+            vim.g.tmux_navigator_no_wrap = 1
+            vim.g.tmux_navigator_no_mappings = 1
+        end,
     }
 }

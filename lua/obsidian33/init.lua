@@ -49,6 +49,17 @@ autocmd("BufWritePre", {
     end,
 })
 
+autocmd("FileType", {
+    pattern = "typescriptreact",
+    callback = function()
+        vim.opt.tabstop = 2
+        vim.opt.softtabstop = 2
+        vim.opt.shiftwidth = 2
+        vim.opt.expandtab = true
+    end,
+})
+
 vim.g.netrw_brows_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
